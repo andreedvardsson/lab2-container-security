@@ -8,7 +8,7 @@ spec:
       - apiGroups: [""]
         kinds: ["Pod"]
     namespaces:
-      - DITT-NAMESPACE
+      - lillteamet
   parameters:
     labels:
       - "team"
