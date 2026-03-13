@@ -28,10 +28,14 @@ Detta repo visar en sårbar container (`Dockerfile.vulnerable`) och en härdad c
 - Efter: `Total: 4 (HIGH: 2, CRITICAL: 2)`
 
 ## Screenshots
-- ![Trivy Before](screenshots/trivy-before.png)
-- ![Trivy After](screenshots/trivy-after.png)
-- ![Gatekeeper Deny](screenshots/gatekeeper-deny.png)
-- ![Gatekeeper Pass](screenshots/gatekeeper-pass.png)
+- `trivy-before.png` visar scan av sårbar image (`my-app:vulnerable`) med hög mängd HIGH/CRITICAL findings.
+  ![Trivy Before](screenshots/trivy-before.png)
+- `trivy-after.png` visar scan av härdad image (`my-app:hardened`) med kraftigt reducerat antal HIGH/CRITICAL findings.
+  ![Trivy After](screenshots/trivy-after.png)
+- `gatekeeper-deny.png` visar ett avslag (DENIED by Gatekeeper) för en osäker pod som bryter mot flera policies.
+  ![Gatekeeper Deny](screenshots/gatekeeper-deny.png)
+- `gatekeeper-pass.png` visar en tillåten pod (ALLOWED) i dry-run med varning om default service account.
+  ![Gatekeeper Pass](screenshots/gatekeeper-pass.png)
 
 ## Gatekeeper-status
 Gatekeeper Lab i Mission Control användes enligt instruktion, men test/deploy är för närvarande blockerad av plattformens RBAC i labbmiljön (`forbidden` från servicekonto). Policyfilerna finns i `policies/` och är inkluderade för att visa implementation/förståelse.
