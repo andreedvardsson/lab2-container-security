@@ -26,6 +26,7 @@ Detta repo visar en sårbar container (`Dockerfile.vulnerable`) och en härdad c
 ## Trivy-resultat (CRITICAL/HIGH)
 - Före: `Total: 1440 (HIGH: 1259, CRITICAL: 181)`
 - Efter: `Total: 4 (HIGH: 2, CRITICAL: 2)`
+- Notering: De kvarvarande 4 HIGH/CRITICAL-fynden ligger i OS-baspaket (Debian Bookworm i `python:3.12-slim-bookworm`), inte i applikationsdependencies.
 
 ## Screenshots
 - `trivy-before.png` visar scan av sårbar image (`my-app:vulnerable`) med hög mängd HIGH/CRITICAL findings.
