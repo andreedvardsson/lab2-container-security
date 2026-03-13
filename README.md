@@ -43,12 +43,7 @@ Gatekeeper Lab i Mission Control användes för att deploya policies och köra d
 `Hardened Pod` gav `ALLOWED with warnings`, vilket visar att podden tillåts men fortfarande får rekommendationer (t.ex. undvika default service account).
 
 ## Reflektion
-Jag lärde mig att container-säkerhet behöver byggas in från början, inte läggas på i efterhand.  
-Att byta till en nyare och slim basimage gav stor skillnad i attackyta och antal sårbarheter.  
-Jag såg också att dependency-versioner spelar stor roll, till exempel skillnaden mellan Flask 1.0.0 och 3.0.0.  
-SBOM är viktig eftersom den ger en tydlig inventering av vad som faktiskt finns i imagen.  
-Med en SBOM går det snabbare att avgöra om vi påverkas när en ny CVE publiceras.  
-Det hjälper även compliance-arbete eftersom man kan visa spårbarhet i supply chain.  
-Gatekeeper förändrar arbetssättet genom att flytta säkerhetskrav till policy-lagret i klustret.  
-Istället för manuella code review-regler får vi automatiskt enforcement vid deploy.  
-Det gör att teamet får snabb feedback och mer konsekventa säkerhetsnivåer i Kubernetes.
+Jag lärde mig att en uppdaterad och mindre image med patchade komponenter minskar risken för sårbarheter.  
+Jag såg också att SBOM fungerar som en inventeringslista över alla komponenter i imagen, vilket gör det enklare att analysera CVE:er och felsöka snabbare.  
+Gatekeeper förändrar arbetssättet från manuella kontroller till automatiska policyregler i Kubernetes.  
+Det gör att osäkra resurser kan stoppas direkt vid deploy i stället för att upptäckas i efterhand.
