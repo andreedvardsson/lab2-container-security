@@ -48,3 +48,14 @@ Jag lärde mig att en uppdaterad och mindre image med patchade komponenter minsk
 Jag såg också att SBOM fungerar som en inventeringslista över alla komponenter i imagen, vilket gör det enklare att analysera CVE:er och felsöka snabbare.  
 Gatekeeper förändrar arbetssättet från manuella kontroller till automatiska policyregler i Kubernetes.  
 Det gör att osäkra resurser kan stoppas direkt vid deploy i stället för att upptäckas i efterhand.
+
+## Cosign-signering (VG)
+Den härdade imagen har pushats och signerats med Cosign.
+
+- Image: `gcr.io/chas-devsecops-2026/andreedvardsson-app:v1`
+- Digest: `sha256:1520706b8d13cf77342aac565de3edb5c252ec13389e42993fe8026578c3e4ed`
+
+Verifiering:
+```bash
+cosign verify --key cosign.pub gcr.io/chas-devsecops-2026/andreedvardsson-app:v1
+```
