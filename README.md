@@ -46,8 +46,11 @@ Gatekeeper Lab i Mission Control användes för att deploya policies och köra d
 ## Reflektion
 Jag lärde mig att en uppdaterad och mindre image med patchade komponenter minskar risken för sårbarheter.  
 Jag såg också att SBOM fungerar som en inventeringslista över alla komponenter i imagen, vilket gör det enklare att analysera CVE:er och felsöka snabbare.  
+Det blev tydligt att gamla beroenden snabbt kan ge väldigt många findings i en container-scan, även i en enkel applikation.  
 Gatekeeper förändrar arbetssättet från manuella kontroller till automatiska policyregler i Kubernetes.  
 Det gör att osäkra resurser kan stoppas direkt vid deploy i stället för att upptäckas i efterhand.
+Jag tycker också att policy enforcement gör säkerhetskrav tydligare för hela teamet, eftersom reglerna blir konsekventa och återanvändbara.  
+Sammantaget gav labben en bättre förståelse för hur container-säkerhet, supply chain-säkerhet och Kubernetes-policyer hänger ihop i praktiken.
 
 ## Cosign-signering (VG)
 Den härdade imagen har pushats och signerats med Cosign.
