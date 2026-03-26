@@ -15,6 +15,9 @@ Detta repo visar en sårbar container (`Dockerfile.vulnerable`) och en härdad c
 - `scan-after.txt`: Trivy-resultat för härdad image
 - `sbom.json`: CycloneDX SBOM för härdad image
 - `policies/*.yaml`: Gatekeeper policy template + constraint
+  - `require-team-label`: kräver `team`-label på pods
+  - `require-non-root`: kräver `runAsNonRoot=true` på pod/container
+  - `disallow-latest-tag`: blockerar `:latest` och otaggade images
 
 ## Vad som förändrades
 - `python:3.8` -> `python:3.12-slim-bookworm`
